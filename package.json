@@ -1,0 +1,35 @@
+{
+  "name": "react-rock-pickers",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "express": "^4.21.2",
+    "node": "^22.13.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "scripts": {
+    "start": "node server/server.js",
+    "client": "vite",
+    "build": "vite build",
+    "test": "vitest",
+    "server": "nodemon --watch server server/server.js"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "nodemon": "^3.1.9",
+    "vite": "^5.0.10",
+    "vitest": "^1.1.0"
+  },
+  "description": "Gregg wanted to create an app to track tennis stats",
+  "main": "vite.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
