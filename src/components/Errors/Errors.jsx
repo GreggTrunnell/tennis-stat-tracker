@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function Errors(props) {
+function Errors() {
   //setup a getter and setter with useState(a hook in react)
   const [ doubleFaults, setDoubleFaults] = useState(0);
   const [ forehandError, setForehandError ] = useState(0);

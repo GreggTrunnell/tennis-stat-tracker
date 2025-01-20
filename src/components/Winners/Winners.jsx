@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function Winners(props) {
+function Winners() {
   //setup a getter and setter with useState(a hook in react)
   const [myPoints, setMyPoints] = useState(0);
   const [aceCount, setAceCount] = useState(0);
@@ -24,8 +24,7 @@ function Winners(props) {
     console.log('Backhand Winner')
     setBackhandWinners(backhandWinners + 1)};
 
-
-    const addWinner=()=>{
+  const addWinner=()=>{
       setWinners( winners + 1 );}  
 
   return (
