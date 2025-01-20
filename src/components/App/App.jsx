@@ -1,5 +1,8 @@
 import './App.css';
 import Players from '../Players/Players';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import StatsList from '../StatsList/StatsList';
 
 function App() {
 
@@ -7,11 +10,8 @@ function App() {
     <div>
       <header>
         <h1>Tennis Stat Tracker</h1>
-        <h3>
-          "If you don't get it over the net it was never going in" 
-          -Gregg Trunnell
-        </h3>
       </header>
+      <StatsList />
       <div className='players-container'>
       <Players name="Rybakina" />
       <Players name="Keys" />

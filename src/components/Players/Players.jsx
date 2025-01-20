@@ -1,13 +1,12 @@
-import { useState } from 'react'
 import Winners from '../Winners/Winners';
 import Errors from '../Errors/Errors';
 
-function Players(props) {
+function Players( name ) {
   
   return (
 
     <div>
-      <h2>{props.name}</h2>
+      <h2>{name.name}</h2>
       <Winners />
       <Errors />
     </div>
