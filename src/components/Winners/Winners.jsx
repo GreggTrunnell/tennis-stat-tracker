@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function Winners() {
   //setup a getter and setter with useState(a hook in react)
@@ -7,6 +7,7 @@ function Winners() {
   const [forehandWinners, setForehandWinners] = useState(0);
   const [backhandWinners, setBackhandWinners] = useState(0);
   const [ winners, setWinners ] = useState(0);
+  
 
   const addPoint = () => {
     console.log("Add point")
