@@ -35,7 +35,7 @@ function Winners() {
       <p>{ aceCount }: Aces</p>
       <p>{ forehandWinners }: Forehand </p>
       <p>{ backhandWinners }: Backhand </p> 
-      <button onClick={ ()=> { addPoint(); addWinner() }}>Point</button>
+      <button onClick={ ()=> { addPoint() }}>Point</button>
       <button onClick={ ()=> { addAce(); addWinner() }}>Ace</button>
       <button onClick={ ()=> { addForehandWinner(); addWinner() }}>Forehand</button>
       <button onClick={ ()=> { addBackhandWinner(); addWinner() }}>Backhand</button>

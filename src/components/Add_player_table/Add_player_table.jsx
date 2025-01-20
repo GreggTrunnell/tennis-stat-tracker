@@ -1,6 +1,6 @@
 
 
-function PlayersTable( {addPlayer, setAddPlayer} ) {
+function Add_player_table( {addPlayer, setAddPlayer} ) {
   function setNewPlayer(e){
     setAddPlayer(e.target.value)
     }
