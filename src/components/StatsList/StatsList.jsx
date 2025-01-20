@@ -1,13 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function StatsList() {
+function StatsList(e) {
   const [statsList, setStatsList] = useState([]);
 
-  useEffect(()=> {
-    fetchList();
-  },[]);
-  
   const fetchList= () => {
     console.log('fetching list')
     axios({
@@ -27,8 +23,11 @@ function StatsList() {
     <div>
          { statsList.map(( stat, index )=>
         <div key={ index }>
-          Player: { stat.player }
+          Player: { stat.player } Opponent: { stat.opponent } Date: { stat.date } Points: { stat.points } Ace: { stat.ace } 
+           Forehand Winners: { stat.fh_winners } Backhand Winners: { stat.bh_winners } Double Faults: { stat.double_faults } 
+           Forehand Error: { stat.fh_error } Backhand Error: { stat.bh_error }
         </div>)}
+        <button onClick={(e)=>{fetchList()}}>Fetch List</button>
     </div>
   );
   }
