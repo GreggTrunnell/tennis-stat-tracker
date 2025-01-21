@@ -7,10 +7,10 @@ router.get('/', (req, res) => {
   const queryText = `
     SELECT * 
     FROM players 
-    WHERE first_name LIKE $1 
-    OR last_name LIKE $1 
-    OR playing_hand LIKE $1
-    OR raquet_brand LIKE $1;
+    WHERE first_name ILIKE $1 
+    OR last_name ILIKE $1 
+    OR playing_hand ILIKE $1
+    OR raquet_brand ILIKE $1;
   `;
   const values = [`%${searchQuery}%`];
 
