@@ -5,7 +5,7 @@ function AddPlayer( ) {
   
   const player=userStore(( state )=> state.player );
 
-  function addPlayerProfile(){
+  function addPlayerProfile(e){
     console.log('addPlayerProfile hit')
     const objectToSend={
       first_name: player.first_name,
@@ -24,14 +24,13 @@ function AddPlayer( ) {
   return (
      <div className='AddPlayer'>
       <h2>Player Profile</h2>
+     <form> 
       <input type="text" placeholder="First Name" onChange={ (e)=>player.first_name= e.target.value  } />
       <input type="text" placeholder="Last Name" onChange={ (e)=>player.last_name= e.target.value  } />
       <input type="text" placeholder="Playing Hand" onChange={ (e)=>player.playing_hand= e.target.value  } />
       <input type="text" placeholder="Raquet Brand" onChange={ (e)=>player.raquet_brand= e.target.value  } />
-      <div>
       <button onClick={ addPlayerProfile }>Add Player Profile</button>
-      </div>
-    
+      </form>
     </div>
   );
   }

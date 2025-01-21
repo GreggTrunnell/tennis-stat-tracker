@@ -1,35 +1,45 @@
 import './App.css';
 import Players from '../Players/Players';
-import axios from 'axios';
-import { useState, useEffect } from 'react';
 import StatsList from '../StatsList/StatsList';
 import AddPlayer from '../AddPlayer/AddPlayer';
 import { NavLink } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
-
-//?working on getting the Add_player_table inputs portion to work
+import Home from '../Home/Home';
+import MatchStats from '../MatchStats/MatchStats';
 
 function App() {
-console.log('in app')
-
 
   return (
     <div>
       <header>
         <h1>Tennis Stat Tracker</h1>
-        <p><NavLink to='/statsList'>Stats List</NavLink></p>
+        <p><NavLink className='nav_links' to='/'>Home</NavLink>_
+          <NavLink className='nav_links' to='/statsList'>Stats List</NavLink>_
+          <NavLink className='nav_links' to='/addPlayer'>Add Player Profile</NavLink>_
+          <NavLink className='nav_links' to='/matchStats'>Match Stats</NavLink></p>
       </header>
       <Routes>
+        <Route
+          exact path="/"
+          element={ <Home /> }
+          />
         <Route
           exact path="/statsList"
           element={ <StatsList /> }
           />
+        <Route
+          exact path="/addPlayer"
+          element={ <AddPlayer /> }
+          />
+        <Route
+          exact path="/players"
+          element={ <Players /> }
+          />
+         <Route
+          exact path="/matchStats"
+          element={ <MatchStats /> }
+          />
        </Routes>
-      <AddPlayer />
-      <div className='players-container'>
-      <Players name="Rybakina" />
-      <Players name="Keys" />
-      </div>
     </div>
   );
 }
