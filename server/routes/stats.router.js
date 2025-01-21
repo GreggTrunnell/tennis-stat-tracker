@@ -3,10 +3,12 @@ const router = express.Router();
 const pool = require('../modules/pool');
 
 router.get('/', (req, res) => {
+  const searchQuery = req.query.q;
     let queryText = 'SELECT * FROM player_stats ORDER BY id;';
-    pool.query(queryText)
+    // const values = [`%${ searchQuery }%`]
+    pool.query(queryText, values)
     .then(result => {     
-      res.send(result.rows);
+      res.res(result.rows);
     })
     .catch(error => {
       console.log('error getting todos in router', error);

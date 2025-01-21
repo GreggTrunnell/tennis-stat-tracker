@@ -4,12 +4,12 @@ import axios from 'axios';
 function StatsList() {
   const [statsList, setStatsList] = useState([]);
 
-  const fetchList= () => {
-    console.log('fetching list')
-    axios({
-      method: "GET",
-      url: "/api/stats",
-    })
+  //Needed to add this hook to make the search input work
+  const [ searchQuery, setSearchQuery ] = useState('');
+
+  const Search= () => {
+    console.log('fetching query', searchQuery)
+    axios.get(`/api/search?q=${ searchQuery }`)
     .then((response)=>{
       console.log("response from GET", response.data);
       setStatsList( response.data);
@@ -20,13 +20,15 @@ function StatsList() {
   };
   return (
     <div>
+      <input type='text' placeholder='Search' value={ searchQuery }
+      onChange={(e)=> setSearchQuery(e.target.value)} />
+      <button onClick={()=>{Search()}}>Search</button>
          { statsList.map(( stat, index )=>
         <div key={ index }>
-          Player: { stat.player } Opponent: { stat.opponent } Date: { stat.date } Points: { stat.points } Ace: { stat.ace } 
-           Forehand Winners: { stat.fh_winners } Backhand Winners: { stat.bh_winners } Double Faults: { stat.double_faults } 
-           Forehand Errors: { stat.fh_losers } Backhand Errors: { stat.bh_losers }
+          First Name: { stat.first_name } Last Name: { stat.last_name } 
+          Playing Hand: { stat.playing_hand } Raquet: { stat.raquet_brand } 
         </div>)}
-        <button onClick={()=>{fetchList()}}>Fetch List</button>
+    
     </div>
   );
   }
