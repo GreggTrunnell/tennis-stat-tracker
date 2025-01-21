@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
   router.post('/', (req, res)=>{
     let playerData = req.body;
     console.log('Adding todo POST in router', playerData);
-    let queryText= `INSERT INTO "players" ("first_name","last_name","playing_hand","raquet_brand")
+    let queryText= `INSERT INTO players ("first_name","last_name","playing_hand","raquet_brand")
     VALUES ( $1, $2, $3, $4 );`
     pool.query(queryText, [ playerData.first_name, playerData.last_name, playerData.playing_hand, playerData.raquet_brand])
     .then(result=>{
