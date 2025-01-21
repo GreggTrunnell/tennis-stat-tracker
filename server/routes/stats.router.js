@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../modules/pool');
 
 router.get('/', (req, res) => {
-  const searchQuery = req.query.q || ''; // Default to empty string
+  const searchQuery = req.query.q || '';
   const queryText = `
     SELECT * 
     FROM players 
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
   pool.query(queryText, values)
     .then((result) => {
       console.log('Query successful:', result.rows);
-      res.json(result.rows); // Send rows back as JSON
+      res.json(result.rows); 
     })
     .catch((error) => {
       console.error('Error executing query:', error);
