@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+// import { NavLink } from "react-router-dom";
 
 function StatsList() {
   const [statsList, setStatsList] = useState([]);
@@ -24,7 +25,7 @@ function StatsList() {
         <div key={ index }>
           Player: { stat.player } Opponent: { stat.opponent } Date: { stat.date } Points: { stat.points } Ace: { stat.ace } 
            Forehand Winners: { stat.fh_winners } Backhand Winners: { stat.bh_winners } Double Faults: { stat.double_faults } 
-           Forehand Error: { stat.fh_error } Backhand Error: { stat.bh_error }
+           Forehand Errors: { stat.fh_losers } Backhand Errors: { stat.bh_losers }
         </div>)}
         <button onClick={()=>{fetchList()}}>Fetch List</button>
     </div>

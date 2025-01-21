@@ -1,10 +1,8 @@
 
-
 function _template( ) {
   
   return (
-
-    <div>
+     <div className='_template'>
   
     </div>
   );
