@@ -1,6 +1,6 @@
 import './App.css';
 import Players from '../Players/Players';
-import StatsList from '../StatsList/StatsList';
+import StatsList from '../Search/Search';
 import AddPlayer from '../AddPlayer/AddPlayer';
 import { NavLink } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
@@ -14,7 +14,7 @@ function App() {
       <header>
         <h1>Tennis Stat Tracker</h1>
         <p><NavLink className='nav_links' to='/'>Home</NavLink>_
-          <NavLink className='nav_links' to='/statsList'>Stats List</NavLink>_
+          <NavLink className='nav_links' to='/statsList'>Search</NavLink>_
           <NavLink className='nav_links' to='/addPlayer'>Add Player Profile</NavLink>_
           <NavLink className='nav_links' to='/matchStats'>Match Stats</NavLink></p>
       </header>

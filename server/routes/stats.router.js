@@ -3,15 +3,26 @@ const router = express.Router();
 const pool = require('../modules/pool');
 
 router.get('/', (req, res) => {
-  let queryText = 'SELECT * FROM players ORDER BY id LIMIT 10;';
-  pool.query(queryText)
-  .then(result => {     
-    res.send(result.rows);
-  })
-  .catch(error => {
-    console.log('error getting todos in router', error);
-    res.sendStatus(500);
-  });
+  const searchQuery = req.query.q || ''; // Default to empty string
+  const queryText = `
+    SELECT * 
+    FROM players 
+    WHERE first_name LIKE $1 
+    OR last_name LIKE $1 
+    OR playing_hand LIKE $1
+    OR raquet_brand LIKE $1;
+  `;
+  const values = [`%${searchQuery}%`];
+
+  pool.query(queryText, values)
+    .then((result) => {
+      console.log('Query successful:', result.rows);
+      res.json(result.rows); // Send rows back as JSON
+    })
+    .catch((error) => {
+      console.error('Error executing query:', error);
+      res.sendStatus(500);
+    });
 });
 
   router.post('/', (req, res)=>{

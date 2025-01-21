@@ -9,6 +9,7 @@ app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
 app.use( '/api/stats', statsRouter );
+app.use( '/api/search', statsRouter );
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT,  () => {
