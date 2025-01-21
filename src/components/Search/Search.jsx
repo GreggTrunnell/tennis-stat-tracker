@@ -5,41 +5,39 @@ function StatsList() {
   const [statsList, setStatsList] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
 
-  // const fetchList= () => {
-  //   console.log('fetching list')
-  //   axios.get(`/api/search?q=${searchQuery}`)
-  //   .then((response)=>{
-  //     console.log("response from GET", response.data);
-  //     setStatsList( response.data);
-  //   })
-  //   .catch((error)=>{
-  //     console.log("error on GET", error);
-  //   });
-  // };
   const Search = () => {
     console.log('Fetching query:', searchQuery);
-    axios.get(`/api/search?q=${ searchQuery }`) // Use encodeURIComponent for safety
+    axios.get(`/api/search?q=${ searchQuery }`)
       .then((response) => {
         console.log("Response from GET", response.data);
-        setStatsList(response.data); // Update state with response data
+        setStatsList(response.data); 
       })
       .catch((error) => {
         console.log("Error on GET", error);
       });
   };
+
+  //this function is used to make a search when the return button is hit
+  //it needs to be inside the input element
+  const handleKeyDown = ( event )=>{
+    if( event.key === 'Enter'){
+      Search();
+    }
+  };
+
   return (
     <div>
       <input 
         type="text" 
-        placeholder="Search by name or brand" 
+        placeholder="Search" 
         value={searchQuery} 
-        onChange={( e ) => setSearchQuery( e.target.value )} // Update the search query
+        onChange={( e ) => setSearchQuery( e.target.value )} 
+        onKeyDown={ handleKeyDown }
       /> 
-      {/* <button onClick={()=>{fetchList()}}>Fetch List</button> */}
       <button onClick={ Search }>Search</button>
             { statsList.map(( stat, index )=>
-        <div key={ index }>
-          First Name: { stat.first_name } Last Name: { stat.last_name } 
+        <div key={ index }><span className='search_results'>
+         { stat.first_name } { stat.last_name } </span>
           Playing Hand: { stat.playing_hand } Raquet: { stat.raquet_brand } 
         </div>)}
               
