@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-// import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function StatsList() {
   const [statsList, setStatsList] = useState([]);
