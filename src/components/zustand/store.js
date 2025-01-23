@@ -5,7 +5,8 @@ const userStore = create(( set )=>({
       first_name: '',
       last_name: '',
       playing_hand: '',
-      raquet_brand: ''
+      raquet_brand: '',
+      country: ''
     }
 }))
  

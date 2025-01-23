@@ -24,9 +24,10 @@ function StatsList() {
       Search();
     }
   };
-
+//!  try $nbsp; for spacing instead of span
   return (
     <div>
+      <img src='public/images/magnifying_man.png'/>
       <input 
         type="text" 
         placeholder="Search" 
@@ -37,8 +38,10 @@ function StatsList() {
       <button onClick={ Search }>Search</button>
             { statsList.map(( stat, index )=>
         <div key={ index }><span className='search_results'>
-         { stat.first_name } { stat.last_name } </span>
-          Playing Hand: { stat.playing_hand } Raquet: { stat.raquet_brand } 
+         { stat.first_name } { stat.last_name } </span>  
+         <span>Playing Hand: { stat.playing_hand }</span> <span>Raquet: { stat.raquet_brand }</span> <span>Country: { stat.country }</span>
+       
+
         </div>)}
               
     </div>
