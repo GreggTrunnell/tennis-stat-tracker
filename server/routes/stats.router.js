@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     WHERE first_name ILIKE $1 
     OR last_name ILIKE $1 
     OR playing_hand ILIKE $1
-    OR raquet_brand ILIKE $1
+    OR racquet_brand ILIKE $1
     OR country ILIKE $1;
   `;
   const values = [`%${searchQuery}%`];
@@ -29,9 +29,9 @@ router.get('/', (req, res) => {
   router.post('/', (req, res)=>{
     let playerData = req.body;
     console.log('Adding todo POST in router', playerData);
-    let queryText= `INSERT INTO players ("first_name","last_name","playing_hand","raquet_brand","country")
+    let queryText= `INSERT INTO players ("first_name","last_name","playing_hand","racquet_brand","country")
     VALUES ( $1, $2, $3, $4, $5 );`;
-    pool.query(queryText, [ playerData.first_name, playerData.last_name, playerData.playing_hand, playerData.raquet_brand, playerData.country ])
+    pool.query(queryText, [ playerData.first_name, playerData.last_name, playerData.playing_hand, playerData.racquet_brand, playerData.country ])
     .then(result=>{
         res.sendStatus(201);
     })

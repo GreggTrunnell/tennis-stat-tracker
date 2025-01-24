@@ -6,8 +6,9 @@ function Players( name ) {
   return (
 
     <div>
-      <h2>{name.name}</h2>
+      <h2 className="players">{name.name}</h2>
       <Winners />
+      <br></br>
       <Losers />
     </div>
   );

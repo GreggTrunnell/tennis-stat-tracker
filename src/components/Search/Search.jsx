@@ -39,7 +39,7 @@ function StatsList() {
             { statsList.map(( stat, index )=>
         <div key={ index }><span className='search_results'>
          { stat.first_name } { stat.last_name } </span>  
-         <span>Playing Hand: { stat.playing_hand }</span> <span>Raquet: { stat.raquet_brand }</span> <span>Country: { stat.country }</span>
+         <span>Playing Hand: { stat.playing_hand }</span> <span>Racquet: { stat.Racquet_brand }</span> <span>Country: { stat.country }</span>
        
 
         </div>)}

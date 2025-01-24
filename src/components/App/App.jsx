@@ -3,7 +3,6 @@ import Navigation from '../Navigation/Navigation';
 import Players from '../Players/Players';
 import Search from '../Search/Search';
 import AddPlayer from '../AddPlayer/AddPlayer';
-import { NavLink } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 import Home from '../Home/Home';
 import MatchStats from '../MatchStats/MatchStats';

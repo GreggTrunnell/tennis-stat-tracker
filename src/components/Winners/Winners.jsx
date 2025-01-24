@@ -30,7 +30,8 @@ function Winners() {
 
   return (
     <div>
-      <h3>Winners</h3>
+      <h3 className="winners">Winners: { winners }</h3>
+      <div className="winners-stats" >
       <p>{ myPoints }: Points</p>
       <p>{ aceCount }: Aces</p>
       <p>{ forehandWinners }: Forehand </p>
@@ -39,7 +40,7 @@ function Winners() {
       <button onClick={ ()=> { addAce(); addWinner() }}>Ace</button>
       <button onClick={ ()=> { addForehandWinner(); addWinner() }}>Forehand</button>
       <button onClick={ ()=> { addBackhandWinner(); addWinner() }}>Backhand</button>
-      <p>Winners: { winners }</p>
+    </div>
     </div>
   );
   }

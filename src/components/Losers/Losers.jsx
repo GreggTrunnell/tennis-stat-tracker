@@ -24,14 +24,15 @@ function Losers() {
   
   return (
     <div>
-     <h3>Unforced Errors</h3>
+     <h3 className="losers">Unforced Errors: { losers }</h3>
+     <div className="losers-stats" >
       <p>{ doubleFaults }: DoubleFaults</p>
       <p>{ forehandLoser }: Forehand</p>
       <p>{ backhandLoser }: Backhand </p>
       <button onClick={ ()=> { addDoubleFault(); addLoser() }}>Double Fault</button>
       <button onClick={ ()=> { addForehandLoser(); addLoser() }}>Forehand</button>
       <button onClick={ ()=> { addBackhandLoser(); addLoser() }}>Backhand</button>
-      <p>Errors: { losers }</p>
+     </div>
     </div>
   );
   }
