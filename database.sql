@@ -3,7 +3,7 @@ CREATE TABLE "players" (
 	"first_name" TEXT,
 	"last_name" TEXT,
 	"playing_hand" TEXT,
-	"raquet_brand" TEXT);
+	"racquet_brand" TEXT);
 	
 CREATE TABLE "player_stats" (
 	"id" SERIAL PRIMARY KEY,
@@ -18,7 +18,9 @@ CREATE TABLE "player_stats" (
 	"fh_error" NUMERIC,
 	"bh_error" NUMERIC);
 		
-	
+ALTER TABLE players
+ADD country TEXT;
+
 SELECT * FROM players;
 
 INSERT INTO players ("first_name","last_name","playing_hand","raquet_brand")
