@@ -25,25 +25,6 @@ function AddPlayer( ) {
      <div className='AddPlayer'>
       <img className="w-50 h-50" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGVhfwFVx_VaJ3LP-KCdE6xdSWAs6C9_qaAw&s"/>
       <h2>Add Player Profile</h2>
-      <div class="container text-center">
-  <div class="row">
-    <div class="col">
-      Column
-    </div>
-    <div class="col">
-      Column
-    </div>
-    <div class="col">
-      Column
-    </div>
-    <div class="col">
-      Column
-    </div>
-    <div class="col">
-      Column
-    </div>
-  </div>
-</div>
      <form > 
       <input type="text" placeholder="First Name" onChange={ (e)=>player.first_name= e.target.value  } />
       <input type="text" placeholder="Last Name" onChange={ (e)=>player.last_name= e.target.value  } />
