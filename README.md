@@ -1,7 +1,7 @@
 # stat-tracker
 //TODO 
--add colors to search results
 -drop down menus, maybe practice material UI 
+-review with Brian how the search list gets rendered with bootstrap
 
 -Could make the raquet input field be a dropdown menu
 

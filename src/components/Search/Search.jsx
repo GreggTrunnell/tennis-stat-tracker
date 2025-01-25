@@ -24,8 +24,8 @@ function StatsList() {
     }
   };
   //TODO refactor statsList.map with styling and ternary operator to display 'no results found'
-  //!  try $nbsp; for spacing instead of span
-//   return (
+//!------Save to ask Brian about bootstrap rendering
+  //   return (
 //     <div>
 //       <img src="public/images/magnifying_man.png" />
 //       <input
@@ -49,6 +49,8 @@ function StatsList() {
 //     </div>
 //   );
 // }
+//!-----------
+
 return (
   <div>
     <input
