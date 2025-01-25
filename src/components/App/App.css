@@ -52,5 +52,9 @@
 
 .losers-stats{
   color: rgb(174, 1, 1);
+}
 
+.red-text{
+  color: rgb(174, 1, 1);
+  font-size: 40px;
 }
