@@ -17,13 +17,12 @@ function StatsList() {
       });
   };
 
-  //this function is used to make a search when the return button is hit
-  //it needs to be inside the input element
   const handleKeyDown = ( event )=>{
     if( event.key === 'Enter'){
       Search();
     }
   };
+//TODO refactor statsList.map  
 //!  try $nbsp; for spacing instead of span
   return (
     <div>
@@ -36,14 +35,11 @@ function StatsList() {
         onKeyDown={ handleKeyDown }
       /> 
       <button onClick={ Search }>Search</button>
-            { statsList.map(( stat, index )=>
+        { statsList.map(( stat, index )=>
         <div key={ index }><span className='search_results'>
          { stat.first_name } { stat.last_name } </span>  
          <span>Playing Hand: { stat.playing_hand }</span> <span>Racquet: { stat.racquet_brand }</span> <span>Country: { stat.country }</span>
-       
-
-        </div>)}
-              
+        </div>)}              
     </div>
   );
   }

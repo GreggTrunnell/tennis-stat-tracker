@@ -24,8 +24,8 @@ function Losers() {
   
   return (
     <div>
-     <h3 className="losers">Unforced Errors: { losers }</h3>
      <div className="losers-stats" >
+      <h3>Unforced Errors: { losers }</h3>
       <p>{ doubleFaults }: DoubleFaults</p>
       <p>{ forehandLoser }: Forehand</p>
       <p>{ backhandLoser }: Backhand </p>

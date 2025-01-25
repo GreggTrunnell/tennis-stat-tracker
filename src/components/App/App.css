@@ -46,16 +46,8 @@
   color: green;
 }
 
-.winners{
-  color: rgb(152, 230, 152);
-}
-
 .winners-stats{
   color: rgb(152, 230, 152);
-}
-
-.losers{
-  color: rgb(174, 1, 1);
 }
 
 .losers-stats{

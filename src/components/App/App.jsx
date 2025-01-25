@@ -15,7 +15,7 @@ function App() {
         <h1>Tennis Stat Tracker</h1>
     <Navigation />
       </header>
-       <main>
+      <main>
       <Routes>
         <Route
           exact path="/"

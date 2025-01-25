@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 function Winners() {
   //setup a getter and setter with useState(a hook in react)
@@ -30,8 +30,8 @@ function Winners() {
 
   return (
     <div>
-      <h3 className="winners">Winners: { winners }</h3>
       <div className="winners-stats" >
+      <h3>Winners: { winners }</h3>
       <p>{ myPoints }: Points</p>
       <p>{ aceCount }: Aces</p>
       <p>{ forehandWinners }: Forehand </p>

@@ -21,6 +21,7 @@ function AddPlayer( ) {
       console.log( 'error in post AddPlayer', err );
     })
     };
+    
   return (
      <div className='AddPlayer'>
       <img className="w-50 h-50" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGVhfwFVx_VaJ3LP-KCdE6xdSWAs6C9_qaAw&s"/>
