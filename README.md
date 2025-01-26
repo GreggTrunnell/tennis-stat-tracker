@@ -1,5 +1,6 @@
 # stat-tracker
 //TODO 
+- move photos to images folder
 -drop down menus, maybe practice material UI 
 -review with Brian how the search list gets rendered with bootstrap
 
