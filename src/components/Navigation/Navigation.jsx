@@ -17,6 +17,9 @@ function Navigation( ) {
       <li className="nav-item">
         <NavLink className="nav-link" to="/add-players">Add Player</NavLink> 
       </li>
+      <li className="nav-item">
+        <NavLink className="nav-link" to="/score">Score</NavLink> 
+      </li>
     </ul>
    </nav>
   );

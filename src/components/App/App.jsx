@@ -6,6 +6,7 @@ import AddPlayer from '../AddPlayer/AddPlayer';
 import { Routes, Route } from 'react-router-dom';
 import Home from '../Home/Home';
 import MatchStats from '../MatchStats/MatchStats';
+import Score from '../Score/Score';
 
 function App() {
 
@@ -37,6 +38,10 @@ function App() {
           exact path="/match-stats"
           element={ <MatchStats /> }
           />
+          <Route
+        exact path="/score"
+        element={ <Score /> }
+        />
        </Routes>
        </main>
     </div>
