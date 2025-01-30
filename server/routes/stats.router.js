@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
     });
 });
 
-  router.post('/', (req, res)=>{
+router.post('/', (req, res)=>{
     let playerData = req.body;
     console.log('Adding todo POST in router', playerData);
     let queryText= `INSERT INTO players ("first_name","last_name","playing_hand","racquet_brand","country")
@@ -39,6 +39,22 @@ router.get('/', (req, res) => {
     .catch(error => {
         console.log(`Error POST router`, error)
         res.sendStatus(500);
+    })
+});
+
+//! some functionality but need to correct queryText
+router.put('/', ( req, res )=>{
+    let matchStatsData = req.body;
+    console.log("data from PUT", matchStatsData )
+    let queryText = `INSERT INTO player_stats ("points","ace","fh_winners","bh_winners","double_faults","fh_losers", "bh_losers")
+    VALUES ( $1, $2, $3, $4, $5, $6, $7 );`;
+    pool.query( queryText, [ match_stats.points, match_stats.ace, match_stats.fh_winners, match_stats.bh_winners, match_stats.double_faults, match_stats.fh_losers, match_stats.bh_losers ])
+    .then( result => {
+      res.sendStatus( 201 )
+    })
+    .catch( error => {
+      console.log("error im put router", error)
+      res.sendStatus( 500 )
     })
 })
 module.exports = router;

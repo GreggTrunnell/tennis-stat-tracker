@@ -1,7 +1,12 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import userStore from "../zustand/store";
+import axios from "axios";
 
 function Winners() {
   //setup a getter and setter with useState(a hook in react)
+
+  const match_stats=userStore(( state )=> state.match_stats );
+
   const [myPoints, setMyPoints] = useState(0);
   const [aceCount, setAceCount] = useState(0);
   const [forehandWinners, setForehandWinners] = useState(0);
@@ -28,6 +33,19 @@ function Winners() {
   const addWinner=()=>{
       setWinners( winners + 1 );}  
 
+//! some functionality but need to correct queryText in stats.router
+  function addStats(e){
+    console.log('stat hit')
+    const objectToSend = {
+      points: match_stats.points
+    }
+  axios.put('/api/match_stats', objectToSend ).then(( response )=>{
+    console.log('put response', response.data )
+  }).catch(( err )=>{
+    console.log("error in put/winners", err )
+  })}    
+
+
   return (
     <div>
       <div className="winners-stats" >
@@ -36,10 +54,11 @@ function Winners() {
       <p>{ aceCount }: Aces</p>
       <p>{ forehandWinners }: Forehand </p>
       <p>{ backhandWinners }: Backhand </p> 
-      <button onClick={ ()=> { addPoint() }}>Point</button>
+      <button onChange={ (e)=>match_stats.points = e.target.value  } onClick={ ()=> { addPoint() }}>Point</button>
       <button onClick={ ()=> { addAce(); addWinner() }}>Ace</button>
       <button onClick={ ()=> { addForehandWinner(); addWinner() }}>Forehand</button>
       <button onClick={ ()=> { addBackhandWinner(); addWinner() }}>Backhand</button>
+      <button onClick={ addStats }>PUT stats</button>
     </div>
     </div>
   );

@@ -10,6 +10,7 @@ app.use(express.static('build'));
 /** ---------- EXPRESS ROUTES ---------- **/
 app.use( '/api/stats', statsRouter );
 app.use( '/api/search', statsRouter );
+app.use( '/api/match_stats', statsRouter );
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT,  () => {
