@@ -1,13 +1,17 @@
 import { create } from 'zustand';
 
-const userStore = create(( set )=>({
+const useStore = create(( set )=>({
     player: {
       first_name: '',
       last_name: '',
       playing_hand: '',
       racquet_brand: '',
-      country: ''
-    }
+      country: '',
+    },
+    updatePlayer: ( newData )=>
+      set(( state )=>({
+        player: { ...state.player, ...newData },
+      }))
 }))
  
-export default userStore; 
+export default useStore; 
