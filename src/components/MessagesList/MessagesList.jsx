@@ -1,19 +1,29 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import useStore from "../zustand/store";
+import axios from "axios";
 
 function MessagesList( ) {
-  
-  const fetchMessges = useStore(( state )=> state.fetchMessges )
-  const messages = useStore(( state )=> state.messages)
+  const [messageList, setMessageList] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
-  useEffect(()=>{
-    fetchMessges();
-  }, []);
-
+  const searchMessages =()=>{
+    console.log('search query', searchQuery );
+    axios.get(`/api/messages?q=${ searchQuery }`)
+    .then(( response )=>{
+      console.log('response from get messageList', response.data);
+      setMessageList( response.data )
+    }).catch(( err )=>{
+      console.log('error in get messageList', err )
+    })
+  }
+  console.log("Messages received:", messageList);
   return (
      <div className='MessagesList'>
+      <input type="text" placeholder="Player's last name" value={ searchQuery }
+      onChange={(e)=> setSearchQuery( e.target.value )} />
+      <button onClick={ searchMessages }>Search</button>
       {
-        messages.map(( message, index )=>(
+        messageList.map(( message, index )=>(
           <div key={ index }>
             {/* <div>{ JSON.stringify( messages )}</div> */}
             <p>

@@ -8,16 +8,16 @@ const useStore = create(( set )=>({
       playing_hand: '',
       racquet_brand: '',
       country: ''
-    },
-    messages: [],
-    fetchMessges: ()=>{
-      axios.get( '/api/messages' )
-      .then(( response )=>{
-        console.log('get from store', response.data )
-        set(( state )=> ({ messages: response.data }));
-      }).catch(( err )=>{
-        console.log('error on get in store', err )
-      })
+    // },
+    // messages: [],
+    // fetchMessges: ()=>{
+    //   axios.get( '/api/messages' )
+    //   .then(( response )=>{
+    //     console.log('get from store', response.data )
+    //     set(( state )=> ({ messages: response.data }));
+    //   }).catch(( err )=>{
+    //     console.log('error on get in store', err )
+    //   })
     }
 }))
  
