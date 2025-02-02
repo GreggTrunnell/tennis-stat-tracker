@@ -7,8 +7,7 @@ function StatsList() {
 
   const Search = () => {
     console.log("Fetching query:", searchQuery);
-    axios
-      .get(`/api/search?q=${searchQuery}`)
+    axios.get(`/api/search?q=${searchQuery}`)
       .then((response) => {
         console.log("Response from GET", response.data);
         setStatsList(response.data);
