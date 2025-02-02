@@ -38,7 +38,7 @@ return (
         <p className="red-text">No results found.</p>
       ) : (
         statsList.map((stat, index) => (
-          <div key={index} className="search-result">
+          <div key={index}>
             <p>
               <strong>Name:</strong> {stat.first_name} {stat.last_name}
             </p>

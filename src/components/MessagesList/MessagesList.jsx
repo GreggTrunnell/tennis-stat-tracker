@@ -16,23 +16,33 @@ function MessagesList( ) {
     })
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      searchMessages();
+    }
+  };
+
   return (
      <div className='MessagesList'>
-      <input type="text" placeholder="Player's last name" value={ searchQuery }
-      onChange={(e)=> setSearchQuery( e.target.value )} />
-      <button onClick={ searchMessages }>Search</button>
-      {
+        <input type="text" placeholder="Player's last name" value={ searchQuery }
+        onChange={(e)=> setSearchQuery( e.target.value )}
+        onKeyDown={ handleKeyDown } />
+        <button onClick={ searchMessages }>Search</button>
+      {messageList.length === 0 ? (
+        <p className="red-text">No results found.</p>
+      ) : (
         messageList.map(( message, index )=>(
-          <div key={ index }>
+          <div key={index} >
             <p>
               <strong>From:</strong> { message.from }
             </p>
             <p>
               <strong>Message:</strong> { message.message }
             </p>
+            <hr />
           </div>
         ))
-      }
+     ) }
     </div>
   );
   }
