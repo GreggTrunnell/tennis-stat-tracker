@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import useStore from "../zustand/store";
 
@@ -6,6 +6,10 @@ function Messages( ) {
 
   const fetchMessges = useStore(( state )=> state.fetchMessges )
   const messages = useStore(( state )=> state.messages)
+
+  useEffect(()=>{
+    fetchMessges();
+  }, []);
   
   const [ message, setMessage ] = useState({ from: '', message: ''})
   function createNewMessage(){
@@ -26,7 +30,7 @@ function Messages( ) {
       {
         messages.map(( message, index )=>(
           <div key={ index }>
-            <div>{ JSON.stringify( messages )}</div>
+            {/* <div>{ JSON.stringify( messages )}</div> */}
             <p>
               <strong>From:</strong> { message.from }
             </p>

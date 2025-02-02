@@ -39,7 +39,7 @@ function App() {
           element={ <MatchStats /> }
           />
           <Route
-          exact path="/message"
+          exact path="/messages"
           element={ <Messages /> }
           />
        </Routes>

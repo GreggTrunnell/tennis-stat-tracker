@@ -18,7 +18,7 @@ router.post('/', ( req, res )=>{
     console.log( 'POST  in router', req.body, req.query );
     const queryText =  `INSERT INTO "messages" ("from","message")
 VALUES ( $1, $2 );`;
-    const values = [ req.body.name, req.body.priority ]
+    const values = [ req.body.from, req.body.message ]
     pool.query( queryText, values ).then(( results )=>{
         res.sendStatus( 201  );
     }).catch(( err )=>{
