@@ -18,7 +18,7 @@ function Navigation( ) {
         <NavLink className="nav-link" to="/add-players">Add Player</NavLink> 
       </li>
       <li className="nav-item">
-        <NavLink className="nav-link" to="/message">Message</NavLink> 
+        <NavLink className="nav-link" to="/messages">Messages</NavLink> 
       </li>
     </ul>
    </nav>

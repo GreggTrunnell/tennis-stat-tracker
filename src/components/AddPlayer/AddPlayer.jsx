@@ -1,9 +1,9 @@
-import userStore from "../zustand/store";
+import useStore from "../zustand/store";
 import axios from "axios";
 
 function AddPlayer( ) {
   
-  const player=userStore(( state )=> state.player );
+  const player=useStore(( state )=> state.player );
 
   function addPlayerProfile(e){
     console.log('addPlayerProfile hit')

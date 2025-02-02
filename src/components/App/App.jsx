@@ -6,7 +6,7 @@ import AddPlayer from '../AddPlayer/AddPlayer';
 import { Routes, Route } from 'react-router-dom';
 import Home from '../Home/Home';
 import MatchStats from '../MatchStats/MatchStats';
-import Message from '../Message/Message';
+import Messages from '../Messages/Messages';
 
 function App() {
 
@@ -40,7 +40,7 @@ function App() {
           />
           <Route
           exact path="/message"
-          element={ <Message /> }
+          element={ <Messages /> }
           />
        </Routes>
        </main>
