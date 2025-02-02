@@ -25,7 +25,7 @@ function StatsList() {
   };
   //TODO refactor statsList.map with styling and ternary operator to display 'no results found'
 //!------Save to ask Brian about bootstrap rendering
-  //   return (
+//     return (
 //     <div>
 //       <img src="public/images/magnifying_man.png" />
 //       <input
