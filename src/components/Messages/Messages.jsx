@@ -26,6 +26,7 @@ function Messages( ) {
       {
         messages.map(( message, index )=>(
           <div key={ index }>
+            <div>{ JSON.stringify( messages )}</div>
             <p>
               <strong>From:</strong> { message.from }
             </p>
