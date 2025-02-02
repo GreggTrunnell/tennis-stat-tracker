@@ -24,9 +24,11 @@ function Messages( ) {
   return (
      <div className='Messages'>
       <p>New Message</p>
-      <input text="text" placeholder="From" onChange={(e)=>{ setMessage({ ...message, from: e.target.value })}}/>
-      <input text="text" placeholder="New Message" onChange={(e)=>{ setMessage({ ...message, message: e.target.value })}}/>
-      <button onClick={ createNewMessage }>Send</button>
+      <form>
+        <input text="text" placeholder="From" onChange={(e)=>{ setMessage({ ...message, from: e.target.value })}}/>
+        <input text="text" placeholder="New Message" onChange={(e)=>{ setMessage({ ...message, message: e.target.value })}}/>
+        <button onClick={ createNewMessage }>Send</button>
+      </form>
       {
         messages.map(( message, index )=>(
           <div key={ index }>

@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
 
-
 router.get('/', ( req, res )=>{
     console.log( 'GET in router' );
     const queryText = `SELECT * FROM "messages" ORDER BY id ASC;`;
@@ -26,12 +25,5 @@ VALUES ( $1, $2 );`;
         res.sendStatus( 400 );
     })
 })
-
-
-
-
-
-
-
 
 module.exports = router;

@@ -23,33 +23,6 @@ function StatsList() {
       Search();
     }
   };
-  //TODO refactor statsList.map with styling and ternary operator to display 'no results found'
-//!------Save to ask Brian about bootstrap rendering
-//     return (
-//     <div>
-//       <img src="public/images/magnifying_man.png" />
-//       <input
-//         type="text"
-//         placeholder="Search"
-//         value={searchQuery}
-//         onChange={(e) => setSearchQuery(e.target.value)}
-//         onKeyDown={handleKeyDown}
-//       />
-//       <button onClick={Search}>Search</button>
-//       {statsList.map((stat, index) => (
-//         <div key={index}>
-//           <span className="search_results">
-//             {stat.first_name} {stat.last_name}{" "}
-//           </span>
-//           <span>Playing Hand: {stat.playing_hand}</span>{" "}
-//           <span>Racquet: {stat.racquet_brand}</span>{" "}
-//           <span>Country: {stat.country}</span>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// }
-//!-----------
 
 return (
   <div>
