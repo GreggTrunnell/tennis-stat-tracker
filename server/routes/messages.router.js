@@ -5,7 +5,14 @@ const pool = require('../modules/pool');
 
 router.get('/', ( req, res )=>{
     console.log( 'GET in router' );
-    const queryText = `SELECT * FROM "messages" ORDER BY id ASC;`;
+    // const searchQuery = req.query.q || '';
+    const queryText = `SELECT players.last_name AS "last name", messages.from AS "from", messages.message AS "message"
+                        FROM players
+                        JOIN users ON players.id = users.player_id
+                        JOIN messages ON messages.id = users.message_id
+                        WHERE players.id = 111;`;
+    // const values =[`%${ searchQuery }%`];
+
     pool.query( queryText ).then(( results )=>{
         res.send( results.rows );
     }).catch(( err )=>{

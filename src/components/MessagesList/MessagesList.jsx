@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import useStore from "../zustand/store";
 
 function MessagesList( ) {
