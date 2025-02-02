@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import useStore from "../zustand/store";
+import { useState } from "react";
 import axios from "axios";
 
 function MessagesList( ) {
@@ -15,8 +14,8 @@ function MessagesList( ) {
     }).catch(( err )=>{
       console.log('error in get messageList', err )
     })
-  }
-  console.log("Messages received:", messageList);
+  };
+
   return (
      <div className='MessagesList'>
       <input type="text" placeholder="Player's last name" value={ searchQuery }
@@ -25,7 +24,6 @@ function MessagesList( ) {
       {
         messageList.map(( message, index )=>(
           <div key={ index }>
-            {/* <div>{ JSON.stringify( messages )}</div> */}
             <p>
               <strong>From:</strong> { message.from }
             </p>
