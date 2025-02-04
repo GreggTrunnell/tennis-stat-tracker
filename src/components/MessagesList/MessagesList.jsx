@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
+//!make addNewMessage comp, message comp, and messageList comp like react todo project
 function MessagesList( ) {
   const [messageList, setMessageList] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");

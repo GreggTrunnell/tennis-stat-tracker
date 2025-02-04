@@ -5,9 +5,11 @@ function AddPlayer( ) {
 
   const [ newPlayer, setNewPlayer ] = useState({ first_name: '', last_name: '', playing_hand: '', racquet_brand: '', country: ''})
 
-  function addPlayerProfile(){;
+  function addPlayerProfile(e){
+    e.preventDefault();
     axios.post( '/api/stats', newPlayer).then (( response )=>{
-     // console.log('response data from createnew post', response.data )
+      //alert won't work without preventDefault fields won't empty once data is sent
+     alert('Player added');
     }).catch(( err )=>{
      console.log( err );
     })
