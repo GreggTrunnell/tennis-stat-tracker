@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from '../Home/Home';
 import MatchStats from '../MatchStats/MatchStats';
 import Messages from '../Messages/Messages';
+import GiphyPractice from '../GiphyPractice/GiphyPractice';
 
 function App() {
 
@@ -41,6 +42,10 @@ function App() {
           <Route
           exact path="/messages"
           element={ <Messages /> }
+          />
+              <Route
+          exact path="/giphy"
+          element={ <GiphyPractice /> }
           />
        </Routes>
        </main>

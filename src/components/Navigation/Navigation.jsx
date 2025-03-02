@@ -20,6 +20,9 @@ function Navigation( ) {
       <li className="nav-item">
         <NavLink className="nav-link" to="/messages">Messages</NavLink> 
       </li>
+      <li className="nav-item">
+        <NavLink className="nav-link" to="/giphy">giphy</NavLink> 
+      </li>
     </ul>
    </nav>
   );
