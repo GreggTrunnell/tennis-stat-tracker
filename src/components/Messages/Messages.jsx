@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import MessagesList from "../MessagesList/MessagesList";
+import ZustandMessages from "../ZustandMessages/ZustandMessages";
 
 function Messages( ) {
 
@@ -21,6 +22,7 @@ function Messages( ) {
         <input text="text" placeholder="New Message" onChange={(e)=>{ setMessage({ ...message, message: e.target.value })}}/>
         <button onClick={ createNewMessage }>Send</button>
       </form>
+      <ZustandMessages />
       <MessagesList />
     </div>
   );
