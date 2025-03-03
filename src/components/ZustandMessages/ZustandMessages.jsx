@@ -1,5 +1,5 @@
 
-import useStore from "../zustand/store";
+import useStore from "../Store/store";
 import { useEffect } from "react";
 
 function ZustandMessages() {

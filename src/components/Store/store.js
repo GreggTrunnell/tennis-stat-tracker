@@ -11,7 +11,12 @@ const useStore = create(( set )=>({
         }).catch(( err )=>{
             console.log('error in get store', err );
         })
-    }
+    },
+    winners: 0,
+
+    aceCount: ( delta )=>{
+        set(( state )=>({ winners: state.winners + delta}))
+      }
 }))
  
 export default useStore; 
