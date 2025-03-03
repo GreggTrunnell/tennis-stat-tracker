@@ -4,7 +4,7 @@ import { create } from 'zustand';
 const useStore = create(( set )=>({
     messages: [ ],
     getMessages: ()=>{
-        axios.get( '/api/messages' )
+        axios.get( '/api/messages/zustand' )
         .then(( response )=>{
             console.log('back from get in store', response.data)
             set(( state )=>({ messages: response.data }));

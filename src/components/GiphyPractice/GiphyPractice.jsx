@@ -27,8 +27,8 @@ function GiphyPractice( ) {
       <div>
       {
         searchResults.map((giph, index )=>(
-          <div>
-         <img key={index} src={ giph.images.original.url }/>
+          <div key={index} >
+         <img src={ giph.images.original.url }/>
          <h2> {giph.title} </h2>
          </div>
         ))
