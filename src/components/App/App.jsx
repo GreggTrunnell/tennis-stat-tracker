@@ -1,6 +1,5 @@
 import './App.css';
 import Navigation from '../Navigation/Navigation';
-import Players from '../Players/Players';
 import Search from '../Search/Search';
 import AddPlayer from '../AddPlayer/AddPlayer';
 import { Routes, Route } from 'react-router-dom';
