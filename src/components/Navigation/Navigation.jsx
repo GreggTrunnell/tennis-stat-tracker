@@ -12,16 +12,13 @@ function Navigation( ) {
         <NavLink className="nav-link" to="/search">Search</NavLink> 
       </li>
       <li className="nav-item">
-        <NavLink className="nav-link" to="/match-stats">Match Stats</NavLink> 
-      </li>
-      <li className="nav-item">
         <NavLink className="nav-link" to="/add-players">Add Player</NavLink> 
       </li>
       <li className="nav-item">
-        <NavLink className="nav-link" to="/messages">Messages</NavLink> 
+        <NavLink className="nav-link" to="/match-stats">Match Stats</NavLink> 
       </li>
       <li className="nav-item">
-        <NavLink className="nav-link" to="/giphy">giphy</NavLink> 
+        <NavLink className="nav-link" to="/apiPrac">API practice</NavLink> 
       </li>
     </ul>
    </nav>

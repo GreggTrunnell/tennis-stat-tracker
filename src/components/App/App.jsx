@@ -6,8 +6,7 @@ import AddPlayer from '../AddPlayer/AddPlayer';
 import { Routes, Route } from 'react-router-dom';
 import Home from '../Home/Home';
 import MatchStats from '../MatchStats/MatchStats';
-import Messages from '../Messages/Messages';
-import GiphyPractice from '../GiphyPractice/GiphyPractice';
+import APIPractice from '../APIPractice/APIPractice';
 
 function App() {
 
@@ -31,21 +30,13 @@ function App() {
           exact path="/add-players"
           element={ <AddPlayer /> }
           />
-        <Route
-          exact path="/players"
-          element={ <Players /> }
-          />
          <Route
           exact path="/match-stats"
           element={ <MatchStats /> }
           />
           <Route
-          exact path="/messages"
-          element={ <Messages /> }
-          />
-              <Route
-          exact path="/giphy"
-          element={ <GiphyPractice /> }
+          exact path="/apiPrac"
+          element={ <APIPractice /> }
           />
        </Routes>
        </main>
