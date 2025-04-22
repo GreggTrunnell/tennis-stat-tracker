@@ -1,9 +1,7 @@
 # 🎾 Tennis Stat Tracker
 
 ## Overview
-I primarily use this project to test out and practice new things. 
-
-
+Application designed to track tennis stats when watching a match. It can also be used to input player data to a db and search that data.
 
 ---
 
