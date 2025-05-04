@@ -1,7 +1,9 @@
-import { useState } from 'react'
-import { post } from '../../../server/routes/match_stats.router';
+import { useState } from 'react';
+import axios from 'axios';
 
 function Winners() {
+//! data not being sent correctly. some connection to db but when adding an ace it just
+//! updates aces to zero
 
   const [winnerStats, setWinnerStats] = useState({
     points:        0,
@@ -11,11 +13,11 @@ function Winners() {
     totalWinners:  0
   });
   
-  const postStats = (updatedStats) =>{
+  const updateStats = (updatedStats) =>{
     console.log("sending to db", winnerStats)
-    axios.post("/api/match_stats", winnerStats)
+    axios.put("/api/match_stats", winnerStats)
     .then((response)=>{
-      setWinnerStats({points: 0})
+      setWinnerStats(winnerStats)
     })
     .catch((err)=>{
       console.log("error in winners post", err)
@@ -27,26 +29,27 @@ function Winners() {
     const isPrimary = key === 'points';
     //created this new variable in this block so imutable
     const updated = {
-      ...stats,
-      [key]: stats[key] + 1,
+      ...winnerStats,
+      [key]: winnerStats[key] + 1,
       totalWinners: isPrimary
-        ? stats.totalWinners
-        : stats.totalWinners + 1
+        ? winnerStats.totalWinners
+        : winnerStats.totalWinners + 1
     };
+    updateStats(updated);
+    setWinnerStats(updated);
   };
   
-  postStats(updated);
-  // setWinnerStats(updated);
 
   return (
     <div>
       <div className="winners-stats" >
       {/* <h3>Winners: { winners }</h3> */}
-      <p>{ winnerStats.points }: Points</p>
+      {/* <p>{ winnerStats.points }: Points</p> */}
       {/* <p>{ aceCount }: Aces</p>
       <p>{ forehandWinners }: Forehand </p>
       <p>{ backhandWinners }: Backhand </p>  */}
       <button onClick={() => incrementAndPost('points')}>Point</button>
+      <button onClick={() => incrementAndPost('aces')}>Ace</button>
       {/* <button onClick={ ()=> { addPoint() }}>Point</button>
       <button onClick={ ()=> { addAce(); addWinner() }}>Ace</button>
       <button onClick={ ()=> { addForehandWinner(); addWinner() }}>Forehand</button>

@@ -2,18 +2,20 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
 
-router.post('/', (req, res)=>{
-    let winnerStats = req.body;
-    console.log('Adding winner in router', winnerStats);
-    let queryText= `INSERT INTO player_stats ("points")
-                    VALUES ( $1 );`;
+router.put('/', (req, res)=>{
+    let { points, aces, fhWinners, bhWinners, totalWinners } = req.body;
+    console.log('Adding winner in router', req.body);
+    let queryText= `UPDATE "player_stats"
+                    SET "aces" = ($1)
+                    WHERE id = 1;`;
     
-    pool.query(queryText, winnerStats)
+    pool.query(queryText, [aces])
     .then(result=>{
+        console.log(req.body)
       res.sendStatus(201);
     })
     .catch(error => {
-      console.log(`Error POST router`, error)
+      console.log(`Error put router`, error)
       res.sendStatus(500);
     })
   })
