@@ -18,6 +18,9 @@ function Navigation( ) {
         <NavLink className="nav-link" to="/match-stats">Match Stats</NavLink> 
       </li>
       <li className="nav-item">
+        <NavLink className="nav-link" to="/scoring">Scoring</NavLink> 
+      </li>
+      <li className="nav-item">
         <NavLink className="nav-link" to="/apiPrac">API practice</NavLink> 
       </li>
     </ul>

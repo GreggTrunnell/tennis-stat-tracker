@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from '../Home/Home';
 import MatchStats from '../MatchStats/MatchStats';
 import APIPractice from '../APIPractice/APIPractice';
+import Scoring from '../Scoring/Scoring';
 
 function App() {
 
@@ -32,6 +33,10 @@ function App() {
          <Route
           exact path="/match-stats"
           element={ <MatchStats /> }
+          />
+           <Route
+          exact path="/scoring"
+          element={ <Scoring /> }
           />
           <Route
           exact path="/apiPrac"
