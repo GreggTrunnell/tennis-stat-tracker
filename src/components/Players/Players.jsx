@@ -1,6 +1,6 @@
 import Winners from '../Winners/Winners';
 import Losers from '../Losers/Losers';
-import Scoring from '../Scoring/Scoring';
+
 
 function Players( name ) {
   
@@ -8,10 +8,9 @@ function Players( name ) {
 
     <div>
       <h2 className="players">{name.name}</h2>
-      <Scoring />
-      {/* <Winners />
+      <Winners />
       <br></br>
-      <Losers /> */}
+      <Losers />
     </div>
   );
   }
