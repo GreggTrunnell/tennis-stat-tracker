@@ -1,11 +1,35 @@
 import React, { useState } from 'react';
 
 function Scoring( ) {
+  const [aceCount, setAceCount] = useState(0);
+  const [backhandWinners, setBackhandWinners] = useState(0);
+  const [forehandWinners, setForehandWinners] = useState(0);
+  const [myPoints, setMyPoints] = useState(0);
   const [score, setScore] = useState({
     player1: { points: 0, games: 0, sets: [] },
     player2: { points: 0, games: 0, sets: [] },
     currentSet: 1,
   });
+  const [ winners, setWinners ] = useState(0);
+
+  const addAce = ()=>{
+  console.log('Ace')
+  setAceCount(aceCount + 1)};
+
+  const addBackhandWinner=()=>{
+  console.log('Backhand Winner')
+  setBackhandWinners(backhandWinners + 1)};
+
+  const addForehandWinner=()=>{
+  console.log('Forehand Winner')
+  setForehandWinners(forehandWinners + 1)};
+
+  const addPoint = () => {
+  console.log("Add point")
+  setMyPoints(myPoints + 1)};
+
+  const addWinner=()=>{
+  setWinners( winners + 1 );}  
 
   const handleScore = (player) => {
     const currentPlayerScore = { ...score[player] };
@@ -69,6 +93,15 @@ function Scoring( ) {
         <button onClick={() => handleScore('player1')}>
           Score Player 1
         </button>
+              <h3>Winners: { winners }</h3>
+      <p>{ myPoints }: Points</p>
+      <p>{ aceCount }: Aces</p>
+      <p>{ forehandWinners }: Forehand </p>
+      <p>{ backhandWinners }: Backhand </p> 
+      <button onClick={ ()=> { handleScore('player1'); addPoint() }}>Point</button>
+      <button onClick={ ()=> { handleScore('player1'); addAce(); addWinner() }}>Ace</button>
+      <button onClick={ ()=> { handleScore('player1'); addForehandWinner(); addWinner() }}>Forehand</button>
+      <button onClick={ ()=> { handleScore('player1'); addBackhandWinner(); addWinner() }}>Backhand</button>
       </section>
   
       {/* Player 2 */}
@@ -95,6 +128,15 @@ function Scoring( ) {
         <button onClick={() => handleScore('player2')}>
           Score Player 2
         </button>
+                      <h3>Winners: { winners }</h3>
+      <p>{ myPoints }: Points</p>
+      <p>{ aceCount }: Aces</p>
+      <p>{ forehandWinners }: Forehand </p>
+      <p>{ backhandWinners }: Backhand </p> 
+      <button onClick={ ()=> { handleScore('player1'); addPoint() }}>Point</button>
+      <button onClick={ ()=> { handleScore('player1'); addAce(); addWinner() }}>Ace</button>
+      <button onClick={ ()=> { handleScore('player1'); addForehandWinner(); addWinner() }}>Forehand</button>
+      <button onClick={ ()=> { handleScore('player1'); addBackhandWinner(); addWinner() }}>Backhand</button>
       </section>
     </div>
   );
