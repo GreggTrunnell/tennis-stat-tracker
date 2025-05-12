@@ -114,25 +114,25 @@ function Scoring( ) {
           </p>
         ))}
       <h3>Winners: { winners }</h3>
-      <p>{ myPoints }: Points</p>
-      <p>{ aceCount }: Aces</p>
-      <p>{ forehandWinners }: Forehand </p>
-      <p>{ backhandWinners }: Backhand </p> 
-      <button onClick={ ()=> { handleScore('player1'); addPoint() }}>Point</button>
-      <button onClick={ ()=> { handleScore('player1'); addAce(); addWinner() }}>Ace</button>
-      <button onClick={ ()=> { handleScore('player1'); addForehandWinner(); addWinner() }}>Forehand</button>
-      <button onClick={ ()=> { handleScore('player1'); addBackhandWinner(); addWinner() }}>Backhand</button>
-            <h3>Unforced Errors: { losers }</h3>
-      <p>{ doubleFaults }: DoubleFaults</p>
-      <p>{ forehandLoser }: Forehand</p>
-      <p>{ backhandLoser }: Backhand </p>
-      <button onClick={ ()=> { addDoubleFault(); addLoser() }}>Double Fault</button>
-      <button onClick={ ()=> { addForehandLoser(); addLoser() }}>Forehand</button>
-      <button onClick={ ()=> { addBackhandLoser(); addLoser() }}>Backhand</button>
+        <p>{ myPoints }: Points</p>
+        <p>{ aceCount }: Aces</p>
+        <p>{ forehandWinners }: Forehand </p>
+        <p>{ backhandWinners }: Backhand </p> 
+        <button onClick={ ()=> { handleScore('player1'); addPoint() }}>Point</button>
+        <button onClick={ ()=> { handleScore('player1'); addAce(); addWinner() }}>Ace</button>
+        <button onClick={ ()=> { handleScore('player1'); addForehandWinner(); addWinner() }}>Forehand</button>
+        <button onClick={ ()=> { handleScore('player1'); addBackhandWinner(); addWinner() }}>Backhand</button>
+      <h3>Unforced Errors: { losers }</h3>
+        <p>{ doubleFaults }: DoubleFaults</p>
+        <p>{ forehandLoser }: Forehand</p>
+        <p>{ backhandLoser }: Backhand </p>
+        <button onClick={ ()=> { handleScore('player2'); addDoubleFault(); addLoser() }}>Double Fault</button>
+        <button onClick={ ()=> { handleScore('player2'); addForehandLoser(); addLoser() }}>Forehand</button>
+        <button onClick={ ()=> { handleScore('player2'); addBackhandLoser(); addLoser() }}>Backhand</button>
       </section>
   
       {/* Player 2 */}
-      {/* <section>
+      <section>
         <h2>Player 2</h2>
         <p>
           Points:{' '}
@@ -152,19 +152,23 @@ function Scoring( ) {
             Set {idx + 1}: {set}
           </p>
         ))}
-        <button onClick={() => handleScore('player2')}>
-          Score Player 2
-        </button>
-                      <h3>Winners: { winners }</h3>
-      <p>{ myPoints }: Points</p>
-      <p>{ aceCount }: Aces</p>
-      <p>{ forehandWinners }: Forehand </p>
-      <p>{ backhandWinners }: Backhand </p> 
-      <button onClick={ ()=> { handleScore('player1'); addPoint() }}>Point</button>
-      <button onClick={ ()=> { handleScore('player1'); addAce(); addWinner() }}>Ace</button>
-      <button onClick={ ()=> { handleScore('player1'); addForehandWinner(); addWinner() }}>Forehand</button>
-      <button onClick={ ()=> { handleScore('player1'); addBackhandWinner(); addWinner() }}>Backhand</button>
-      </section> */}
+      <h3>Winners: { winners }</h3>
+        <p>{ myPoints }: Points</p>
+        <p>{ aceCount }: Aces</p>
+        <p>{ forehandWinners }: Forehand </p>
+        <p>{ backhandWinners }: Backhand </p> 
+        <button onClick={ ()=> { handleScore('player2'); addPoint() }}>Point</button>
+        <button onClick={ ()=> { handleScore('player2'); addAce(); addWinner() }}>Ace</button>
+        <button onClick={ ()=> { handleScore('player2'); addForehandWinner(); addWinner() }}>Forehand</button>
+        <button onClick={ ()=> { handleScore('player2'); addBackhandWinner(); addWinner() }}>Backhand</button>
+      <h3>Unforced Errors: { losers }</h3>
+        <p>{ doubleFaults }: DoubleFaults</p>
+        <p>{ forehandLoser }: Forehand</p>
+        <p>{ backhandLoser }: Backhand </p>
+        <button onClick={ ()=> { handleScore('player1');  addDoubleFault(); addLoser() }}>Double Fault</button>
+        <button onClick={ ()=> { handleScore('player1');  addForehandLoser(); addLoser() }}>Forehand</button>
+        <button onClick={ ()=> { handleScore('player1');  addBackhandLoser(); addLoser() }}>Backhand</button>
+      </section>
     </div>
   );
 }
