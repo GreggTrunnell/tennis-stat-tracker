@@ -62,3 +62,18 @@
 .search-result{
   color: rgb(152, 230, 152);
 }
+
+.players-container {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+  color: rgb(152, 230, 152);
+}
+
+.current-set-footer {
+  text-align: center !important;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  /* width: 100% is implied for block‑level footer */
+}

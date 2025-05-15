@@ -1,5 +1,3 @@
-//!need to go through and attempt to refactor
-
 import { useState } from 'react';
 
 function Scoring({ playerNames = { player1: 'Player 1', player2: 'Player 2' } }) {
@@ -72,6 +70,7 @@ function Scoring({ playerNames = { player1: 'Player 1', player2: 'Player 2' } })
 
   return (
     <div>
+       <div className="players-container" >
       {['player1', 'player2'].map((playerKey) => {
         const opponentKey = playerKey === 'player1' ? 'player2' : 'player1';
         const { winners, errors } = stats[playerKey];
@@ -89,11 +88,8 @@ function Scoring({ playerNames = { player1: 'Player 1', player2: 'Player 2' } })
               Point
             </button>
 
-            <h3>Winners</h3>
-            <p>Total: {winners.total}</p>
-            <p>Aces: {winners.ace}</p>
-            <p>Forehand: {winners.forehand}</p>
-            <p>Backhand: {winners.backhand}</p>
+            <div className="winners-stats" >
+            <h3>Winners: {winners.total}</h3>
             <button onClick={() => { handleScore(playerKey); recordStat(playerKey, 'winners', 'ace'); }}>
               Ace
             </button>
@@ -103,12 +99,13 @@ function Scoring({ playerNames = { player1: 'Player 1', player2: 'Player 2' } })
             <button onClick={() => { handleScore(playerKey); recordStat(playerKey, 'winners', 'backhand'); }}>
               Backhand Winner
             </button>
-
-            <h3>Unforced Errors</h3>
-            <p>Total: {errors.total}</p>
-            <p>Double Faults: {errors.doubleFault}</p>
-            <p>Forehand Errors: {errors.forehand}</p>
-            <p>Backhand Errors: {errors.backhand}</p>
+            <p>Aces: {winners.ace}</p>
+            <p>Forehand: {winners.forehand}</p>
+            <p>Backhand: {winners.backhand}</p>
+            </div>
+            
+            <div className="losers-stats">
+            <h3>Unforced Errors: {errors.total}</h3>
             <button onClick={() => { handleScore(opponentKey); recordStat(playerKey, 'errors', 'doubleFault'); }}>
               Double Fault
             </button>
@@ -118,12 +115,17 @@ function Scoring({ playerNames = { player1: 'Player 1', player2: 'Player 2' } })
             <button onClick={() => { handleScore(opponentKey); recordStat(playerKey, 'errors', 'backhand'); }}>
               Backhand Error
             </button>
+            <p>Double Faults: {errors.doubleFault}</p>
+            <p>Forehand Errors: {errors.forehand}</p>
+            <p>Backhand Errors: {errors.backhand}</p>
+            </div>
+
           </section>
         );
       })}
-
-      <footer>
-        <p>Current Set: {score.currentSet}</p>
+      </div>
+        <footer className="current-set-footer">
+        <h2>Current Set: {score.currentSet}</h2>
       </footer>
     </div>
   );
