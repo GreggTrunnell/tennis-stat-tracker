@@ -8,15 +8,17 @@ This application began as a way to identify the most popular tennis racquets use
 
 ## Features
 
-- 📊 **Racquet Popularity**: Users can input and search for players information.
+- **Racquet Popularity**: Users can input and search for players information.
 - **Match Stats**: Users can keep track of match stats and scores as they watch.
 
 ## Technologies Used
 
+- **Javascript**
 - **React**
-- **React Router (`react-router-dom`)**
 - **Axios**
+- **Postico**
+- **PostgresSQL**
 - **JSX**
 - **CSS** 
-- **Bootstrap (or utility-style CSS classes like `p-3`, `w-50`, `h-50`)** 
+- **Bootstrap** 
 
