@@ -1,7 +1,9 @@
 # 🎾 Tennis Stat Tracker
 
 ## Overview
+
 This application began as a way to identify the most popular tennis racquets used by professional players. Over time, it evolved to include match stat tracking for a more engaging viewing experience. More recently, it has served as a sandbox for learning and experimenting with new technologies. While its primary purpose is educational, it also showcases practical features and a progression of development skills.
+
 ---
 
 ## Features
@@ -16,6 +18,5 @@ This application began as a way to identify the most popular tennis racquets use
 - **Axios**
 - **JSX**
 - **CSS** 
-- **Bootstrap (or utility-style CSS classes like `p-3`, `w-50`, `h-50`)** – Suggests use of Bootstrap or a similar utility-first CSS framework.
-
+- **Bootstrap (or utility-style CSS classes like `p-3`, `w-50`, `h-50`)** 
 
