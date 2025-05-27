@@ -1,36 +1,21 @@
 # 🎾 Tennis Stat Tracker
 
 ## Overview
-Application designed to track tennis stats when watching a match. It can also be used to input player data to a db and search that data.
-
+This application began as a way to identify the most popular tennis racquets used by professional players. Over time, it evolved to include match stat tracking for a more engaging viewing experience. More recently, it has served as a sandbox for learning and experimenting with new technologies. While its primary purpose is educational, it also showcases practical features and a progression of development skills.
 ---
 
 ## Features
 
-- 📊 **Racket Popularity**: Users can input and search for players information.
+- 📊 **Racquet Popularity**: Users can input and search for players information.
+- **Match Stats**: Users can keep track of match stats and scores as they watch.
+
+## Technologies Used
+
+- **React**
+- **React Router (`react-router-dom`)**
+- **Axios**
+- **JSX**
+- **CSS** 
+- **Bootstrap (or utility-style CSS classes like `p-3`, `w-50`, `h-50`)** – Suggests use of Bootstrap or a similar utility-first CSS framework.
 
 
----
-
-## Tech Stack
-
-- **React** 
-- **Zustand** 
-- **Bootstrap** 
-
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js ≥ 14.x  
-- npm or yarn  
-
-### Installation
-
-1. **Clone the repo**  
-   ```bash
-   git clone https://github.com/your‑username/tennis‑tracker.git
-   cd tennis‑tracker
